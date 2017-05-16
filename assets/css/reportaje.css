@@ -40,17 +40,71 @@ body {
   margin: 0;
   padding: 0;
 }
+.dropCap{
+  font-size: 60px;
+  float: left;
+  padding: 10px 2px;
+  margin: 0;
+}
+p {
+  font-family: "Libre Baskerville", serif;
+  font-size: 0.9em !important;
+}
 .byline {
-  margin: 10px 10px 0 700px;
+  margin: 150px 70px 0;
   font-weight: bold;
+  position: relative;
+  color: #ff751a;
   opacity: 0.6;
   font-size: 15px
 }
+figcaption {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  color: #ff751a;
+}
+.decoration{
+  margin: 0;
+  max-width: 100vh;
+  height: 80px;
+  background-color: #22264b;
+  opacity: 0.8;
+  position: relative;
+  box-shadow: 0px 1px 3px grey;
+}
+.navigation{
+  width: 100%;
+  margin: auto;
+  font-size: 20px;
+  text-align: center;
+  padding: 5px 0;
+  background-color: #ff751a;
+  opacity: 0.8;
+  box-shadow: 0px 1px 3px grey;
+  z-index: 2;
+}
 
+.navigation a{
+  margin: 0 40px 5px;
+  display: inline-block;
+  position: relative;
+}
+.icono {
+  max-width: 50px;
+}
 /*********************************************
  * HEADERS
  *********************************************/
-h1,
+h1 {
+  margin: 0 0 20px 0;
+  color: #f2f2f2;
+  font-family: "Playfair", serif;
+  font-weight: 700;
+  line-height: 0.8em;
+  letter-spacing: -0.002em;
+  text-shadow: none;
+  word-wrap: break-word;
+}
 h2,
 h3,
 h4,
@@ -58,13 +112,13 @@ h5,
 h6 {
   margin: 0 0 20px 0;
   color: #22264b;
-  font-weight: normal;
+    font-family: "Playfair", serif;
+  font-weight: 700;
   line-height: 0.8em;
   letter-spacing: -0.002em;
   text-shadow: none;
   word-wrap: break-word;
 }
-
 
 h1 {
   font-family: 'Playfair', serif;
@@ -90,9 +144,9 @@ h4 {
 }
 
 p {
-  font-size: 1.2em;
+  font-size: 1.3em;
   line-height: 1.6em;
-  padding: 32px 0px;
+  padding: 22px 0px;
 }
 
 h1, h2, h3, h4, p, a {

@@ -11,7 +11,7 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700');
 
 .reveal .slide-aligned-left {
-  text-align: left;
+  text-align: right;
 }
 
 .audio {
@@ -24,7 +24,6 @@
   margin-right: auto;
   width: 800px;
   opacity: 0.9;
-
 }
 
 audio {
@@ -36,6 +35,8 @@ audio {
 .reveal h1 {
 <<<<<<< HEAD
   font-family: 'Playfair', serif; !important;
+  color: #f2f2f2;
+  text-align: right !important;
 =======
   font-weight: 400;
 >>>>>>> origin/master
@@ -45,12 +46,17 @@ audio {
 
   .reveal h2 {
     font-family: 'Playfair', serif;
+    color: #f2f2f2;
   }
 
   .reveal h6 {
     font-size: 0.6em;
+    display: inline-block;
+    color: #22264b;
   }
-
+  .reveal h6 a{
+    margin: 10px;
+  }
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -80,8 +86,7 @@ body {
 .reveal h2,
 .reveal h3,
 .reveal h4,
-.reveal h5,
-.reveal h6 {
+.reveal h5, {
   margin: 0 0 20px 0;
   color: #22264b;
   font-weight: normal;
@@ -92,7 +97,7 @@ body {
 }
 
 .reveal h1 {
-  font-size: 3em;
+  font-size: 1.65em;
   text-shadow: none;
 }
 
@@ -109,9 +114,10 @@ body {
 }
 
 .reveal p {
-  font-size: 0.9em !important;
+  font-size: 0.55em !important;
   line-height: 1.6;
   padding-top: 32px;
+  color: #d9d9d9;
 }
 
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal p, .reveal a {

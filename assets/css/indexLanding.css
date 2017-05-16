@@ -32,7 +32,7 @@
 .reveal h1 {
   font-family: 'Playfair', serif !important;
   font-weight: 400;
-  color: #22264b !important;
+  color: #f2f2f2 !important;
   letter-spacing: -1.2em;
   text-align: left;
   line-height: 1.055em !important;
@@ -70,11 +70,13 @@ body {
   height: 700px;
   display: inline-block;
 }
-
+.trabajos a{
+  margin: 0 10px;
+}
 .trabajoImagen{
-  margin: 10px;
+  margin: 15px;
   position: relative;
-  width: 225px;
+  width: 220px;
   display: inline-block;
 }
 
@@ -132,7 +134,8 @@ body {
 }
 
 .reveal p {
-  font-size: 0.9em !important;
+  font-size: 0.6em !important;
+  color: #d9d9d9 !important;
   line-height: 1.6;
   padding-top: 32px;
 }
