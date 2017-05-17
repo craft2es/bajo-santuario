@@ -6,9 +6,9 @@
  * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
 
-@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Nixie+One');
+/* @import url('https://fonts.googleapis.com/css?family='); */
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700');
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Playfair+Display:400,700');
 
 
 /*********************************************
@@ -16,24 +16,27 @@
  *********************************************/
 header{
   max-width: 100%;
-}
-.header{
   width: 100%;
-}
-.landingImage{
-  max-width: auto;
-  position: absolute;
-  margin: 0;
-}
-.landingTitle{
+  min-height: 600px;
   position: relative;
-  text-align: right;
-  font-size: 2.5em;
-  text-shadow: none;
-  line-height: 1.3em;
-  margin-top: 0px !important;
-  padding: 250px 10px 0 0;
 }
+
+/*
+img.landingImage {
+  position: absolute;
+
+
+   min-height: 100%;
+   min-width: 1024px;
+
+
+   width: 100%;
+   height: auto;
+}
+
+*/
+
+
 body {
   font-size: 16px;
   overflow: visible;
@@ -50,45 +53,43 @@ p {
   font-family: "Libre Baskerville", serif;
   font-size: 0.9em !important;
 }
-.byline {
-  margin: 150px 70px 0;
-  font-weight: bold;
-  position: relative;
-  color: #ff751a;
-  opacity: 0.6;
-  font-size: 15px
-}
 figcaption {
   font-family: "Montserrat", sans-serif;
   font-size: 13px;
   color: #ff751a;
 }
-.decoration{
+.footer {
+  /* position: absolute; */
+  bottom: 0;
   margin: 0;
-  max-width: 100vh;
+  width: 100%;
   height: 80px;
-  background-color: #22264b;
-  opacity: 0.8;
-  position: relative;
-  box-shadow: 0px 1px 3px grey;
+  background-color: rgba(255, 117, 26, 0.5);
+  /* box-shadow: 0px 1px 3px grey; */
 }
 .navigation{
   width: 100%;
   margin: auto;
-  font-size: 20px;
+  font-size: 1.4em;
   text-align: center;
   padding: 5px 0;
   background-color: #ff751a;
-  opacity: 0.8;
-  box-shadow: 0px 1px 3px grey;
+  /* opacity: 0.8; */
+  /* box-shadow: 0px 1px 3px grey; */
   z-index: 2;
 }
 
-.navigation a{
-  margin: 0 40px 5px;
+.navigation a {
+  margin: 0;
+  margin-right: 50px;
+  margin-bottom: 32px;
   display: inline-block;
   position: relative;
 }
+.navigation a:last-child {
+  margin-right: 0;
+}
+
 .icono {
   max-width: 50px;
 }
@@ -155,11 +156,11 @@ h1, h2, h3, h4, p, a {
 }
 
 /* Ensure certain elements are never larger than the slide itself */
-img,
+/* img,
 video,
 iframe {
   max-width: 95%;
-  max-height: 95%; }
+  max-height: 95%; } */
 
 strong,
 b {
@@ -241,6 +242,56 @@ a:hover {
   border-bottom: 4px solid rgba(0, 0, 0, 0.1);
 }
 
+/* Hero */
+
+
+#bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url('../images/FabianReportajeLanding.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: -1;
+}
+
+
+.landingTitle {
+  top: 120px;
+  right: 120px;
+  position: absolute;
+  text-align: right;
+  font-size: 2.5rem;
+  text-shadow: none;
+  line-height: 1.3em;
+  /* margin-top: 0px !important; */
+  /* padding: 250px 10px 0 0; */
+}
+.landingDesc {
+  font-family: 'Libre Baskerville';
+  font-weight: normal;
+  bottom: 120px;
+  /* right: 120px; */
+  position: absolute;
+  text-align: center;
+  font-size: 1rem;
+  text-shadow: none;
+  line-height: 1.3em;
+  color: #fff;
+  /* margin-top: 0px !important; */
+  /* padding: 250px 10px 0 0; */
+}
+
+.byline {
+  position: absolute;
+  width: 100%;
+  margin: 150px 70px 0;
+  font-weight: bold;
+  color: #ff751a;
+  font-size: 1rem;
+}
+
 /*********************************************
  * IMAGES
  *********************************************/
@@ -259,12 +310,152 @@ img {
   background-size: cover;
  }
 
- .encabezado {
+/*  .encabezado {
     padding: 300px 200px;
     background: url('FabianReportajeLanding.jpg') no-repeat center center fixed;
  }
-
+ */
  .contenedor {
-  padding: 200px;
+  padding: 200px 200px;
+  /* padding: 200px; */
   background: #fff;
  }
+
+@media only screen and (min-width : 320px) {
+  header {
+    /* background-color: red; */
+  }
+  .contenedor {
+   padding: 50px 25px;
+   /* padding: 200px; */
+   background: #fff;
+  }
+
+  .landingTitle {
+    font-weight: 400;
+    top: 120px;
+    right: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    text-align: center;
+    font-size: 2.5rem;
+    text-shadow: none;
+    line-height: 1.3em;
+  }
+
+  .byline {
+    position: absolute;
+    bottom: 5%;
+    right: 0;
+    left: 0;
+    margin: 0;
+    font-weight: bold;
+    color: #fff;
+    font-size: 0.8rem;
+  }
+
+  .landingDesc {
+    font-family: 'Libre Baskerville';
+    font-weight: normal;
+    bottom: 20%;
+    left: 0;
+    right: 0;
+    /* position: absolute; */
+    /* text-align: center; */
+    font-size: 1.2rem;
+    text-shadow: none;
+    line-height: 1.3em;
+    color: #fff;
+    /* margin-top: 0px !important; */
+    /* padding: 250px 10px 0 0; */
+  }
+}
+@media only screen and (min-width : 992px) {
+  header{
+    min-height: 900px;
+  }
+  .landingTitle {
+    font-weight: 400;
+    top: 240px;
+    right: 8%;
+    position: absolute;
+    text-align: right;
+    font-size: 2.5rem;
+    text-shadow: none;
+    line-height: 1.3em;
+  }
+
+  .byline {
+    position: absolute;
+    bottom: 120px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+    color: #ff751a;
+    font-size: 1rem;
+  }
+
+  .landingDesc {
+    font-family: 'Libre Baskerville';
+    font-weight: normal;
+    width: 50%;
+    top: 420px;
+    right: 8%;
+    left: auto;
+    bottom: auto;
+    text-align: right;
+    position: absolute;
+    font-size: 1rem;
+    text-shadow: none;
+    line-height: 1.3em;
+    color: #fff;
+    /* margin-top: 0px !important; */
+    /* padding: 250px 10px 0 0; */
+  }
+}
+
+@media only screen and (min-width : 1200px) {
+  .landingTitle {
+      font-weight: 400;
+      top: 320px;
+      right: 10%;
+      position: absolute;
+      text-align: right;
+      font-size: 3rem;
+      text-shadow: none;
+      line-height: 1.3em;
+    }
+
+    .byline {
+      position: absolute;
+      bottom: 120px;
+      left: 0;
+      right: 10%;
+      margin: 0;
+      text-align: center;
+      font-weight: bold;
+      color: #ff751a;
+      font-size: 1.2rem;
+    }
+
+    .landingDesc {
+      font-family: 'Libre Baskerville';
+      font-weight: normal;
+      width: 40%;
+      top: 620px;
+      right: 10%;
+      left: auto;
+      bottom: auto;
+      text-align: right;
+      position: absolute;
+      font-size: 1rem;
+      text-shadow: none;
+      line-height: 1.3em;
+      color: #fff;
+    }
+}
+
