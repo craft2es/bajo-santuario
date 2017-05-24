@@ -133,8 +133,11 @@ h1 {
 }
 
 h2 {
-  font-size: 2.11em;
+  font-size: 2.7em;
   line-height: 1.8em;
+  color: #ff751a;
+  text-shadow: 1px 1px;
+
 }
 
 h3 {
@@ -206,7 +209,9 @@ blockquote {
   quotes: none; }
 
 blockquote {
-  display: block;
+  font-family: "Montserrat", sans-serif;
+  color: #ff751a;
+  display: ;
   position: relative;
   width: 70%;
   margin: 20px auto;

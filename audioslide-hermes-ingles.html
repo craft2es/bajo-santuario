@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>A Father for Hermes</title>
+
+        <link rel="stylesheet" href="assets/css/reveal.css">
+        <link rel="stylesheet" href="assets/css/audio.css">
+        <script src="assets/js/jquery.min.js"></script>
+
+    </head>
+    <body>
+        <div class="audio">
+            <audio id="entrevista">
+              <source src="assets/audios/hermes-ingles_final.mp3" type="audio/mp3">
+            </audio>
+        </div>
+        <div class="reveal">
+            <div class="slides">
+                <section class="slide-aligned-left" data-background-image="assets/images/HermesSentado.jpg">
+                    <h1>A Father for <br>Hermes</h1>
+                    <p>The story of the first undocumented minor <br>under the legal guardianship of a sanctuary <br>church in New York City.</p>
+                    <a href="#" class="navigate-next" id="comenzar">Listen</a>
+                </section>
+
+                <section class="slide-aligned-center" data-background-image="assets/images/HermesPP.jpg"><p>I can't stand to be here anymore. I need to find another way of living.</p></section>
+
+                <section class="slide-aligned-center" data-background-color="#22264b">
+                    <p>Hermes Espinoza is one of the 27 minors under the guardianship of Father Fabián Arias, the leader of a Lutheran church that is part of the New Sanctuary Movement.</p>
+                </section>
+
+                <section class="slide-aligned-center" data-background-image="assets/images/HermesPE.jpg"></section>
+
+                <section class="slide-aligned-center" data-background-color="#22264b">
+                    <p>“When you’re there and you ask yourself: What am I doing? Where am I going to go? I’m not going to make it to the end. I might die trying to get there. It happens to so many people, and nobody cares. I thank God that my brother was with me in the journey. If I had been alone, I don’t think I would be here now. It was a hard journey. <br>But, at the same time, I think it was worth it.”</p>
+                </section>
+
+                <section class="slide-aligned-center" data-background-image="assets/images/HermesPM.jpg"></section>
+
+                <section class="slide-aligned-center" data-background-image="assets/images/HermesIglesiaSion.jpg"></section>
+
+                <section class="slide-aligned-center" data-background-image="assets/images/HermesFabian.jpg"></section>
+
+                <section class="slide-aligned-center" data-background-image="assets/images/HermesIglesiaFabian.jpg"></section>
+
+                <section class="slide-aligned-center" data-background-image="assets/images/HermesFabianMisa.jpg"></section>
+
+                <section class="slide-aligned-center" data-background-color="#22264b">
+                    <p>“We do what we can. I just wish we could protect all 11 million…(laughs) So many people who are unable to apply for all these blessings, right?”</p>
+                </section>
+
+                <section class="slide-aligned-center" data-background-image="assets/images/HermesPuente.jpg"><p>"It got to the point where I didn’t want to live, anymore. I tried to commit suicide twice. I was feeling totally empty... Fabián wasn't notified the first time."</p></section>
+
+                <section class="slide-aligned-center" data-background-image="assets/images/HermesTimesSquare.jpg"><p>"The second one, he knew about. He told me: “What were you thinking? Look at everything you have accomplished!"</p></section>
+
+                <section class="slide-aligned-center" data-background-image="assets/images/Hermes17.jpg"></section>
+
+                <section class="slide-aligned-center" data-background-color="#22264b">
+                    <p>With the help of the faithfuls from Church Sión and Father Fabián, Hermes excels and focuses on studying fashion design at the Fashion Institute of Technology of New York City.</p>
+                </section>
+
+                <section class="slide-aligned-center" data-background-color="#22264b">
+                    <h2>A Father for Hermes</h2>
+                    <p>By: Jesenia De Moya C., Estefanía Hernández and Lidia Hernández Tapia</p>
+                    <p>Interviewees: Hermes Espinosa and Fabián Arias</p>
+                    <p>Editors: Luis Trelles, Miguel Paz, Cristina Maldonado (Research) <br>y David Galavotti (Interactive)</p>
+                    <p>An assignment for the bilingual Craft 2 class <br>of the CUNY Graduate School of Journalism</p>
+                    <center><img src="assets/images/nycns.png"></center>
+                    <h6 data-background-color="#22264b"><a href="video-iglesias-santuario-ingles.html">How do sanctuary churches protect?</a><a href="reportaje-adopciones-ingles.html">The Stand of Father Fabián</a><a href="audioslide-hermes.html">Versión en español</a></h6>
+                </section>
+
+            </div>
+        </div>
+
+        <script src="assets/js/head.min.js"></script>
+        <script src="assets/js/reveal.js"></script>
+        <script>
+
+
+            $(document).ready(function() {
+
+                // Array para guardar el tiempo en el momento que cambiamos cada slide.
+                // Cada valor en el array esta expresado en segundos acumulados.
+                var tiempoTransicion = [8, 20, 28, 49, 59, 68, 78, 86, 102, 112, 130, 140, 150, 160];
+                // Posición del array tiempoTransicion
+                var marcaActual = 0;
+                // Selecciono el objeto de audio.
+                var entrevista = $('#entrevista');
+                // Extraigo la duración.
+                var duracion = entrevista.prop('duration');
+                // Extraigo la posición actual del audio.
+                var posicion = entrevista.prop('currentTime');
+
+                // Inicio haciendo click en el botón comenzar, para darle "Play" al audio. El slide se ejecuta vía Reveal.js, class="navigate-next"
+                $('#comenzar').on('click', function() {
+                    entrevista.trigger('play');
+                });
+
+                // Listener o evento que detecta si hubo un cambio en slide.
+                Reveal.addEventListener( 'slidechanged', function(event, setTime) {
+
+                    // Si accidentalmente me cambio de slide sin usar el botón comenzar, entonces ejecuto el audio.
+
+                    // Caso contrario, pongo el audio en pausa y lo vuelvo a cero.
+
+                    if (Reveal.getState().indexh === 0) {
+                        entrevista.trigger('pause');
+                        entrevista.prop('currentTime',0);
+                    } else {
+                        entrevista.trigger('play');
+                    }
+
+                });
+
+
+
+                // Función para ejecutar siguiende slide.
+                function cambiarSlide() {
+                    Reveal.next();
+                    marcaActual += 1;
+                }
+
+                // Listener o evento que extrae el tiempo actual del audio.
+                // Sin función actualmente.
+                entrevista.on('timeupdate', function() {
+                    posicion = entrevista.prop('currentTime');
+                    if (posicion > 0 && posicion >= tiempoTransicion[marcaActual]) {
+                        cambiarSlide();
+                    }
+                });
+
+
+
+            });
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                history: false,
+                controls: false,
+                center: true,
+                progress: false,
+                width: "100%",
+                height: "100%"
+            });
+        </script>
+    </body>
+</html>
